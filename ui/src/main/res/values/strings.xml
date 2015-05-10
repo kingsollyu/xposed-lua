@@ -6,7 +6,7 @@
         本模块的优点有如下：\n
             1. 实时加载、实时调试Xposed的功能\n
             2. Lua支持语言，拥有Lua的标准库功能\n
-            3. 良好的论坛(bbs.0xcode.org)
+            3. 良好的论坛(bbs.0xcode.org)\n
             4. 几乎支持所有平台(arm,x86,arm-v7)
     </string>
     <string name="action_get_more_plugin">Get More Plugin</string>
