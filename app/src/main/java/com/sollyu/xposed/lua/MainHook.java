@@ -2,6 +2,7 @@ package com.sollyu.xposed.lua;
 
 import com.sollyu.utils.LogUtils;
 import com.sollyu.xposed.lua.command.HookMethodAfter;
+import com.sollyu.xposed.lua.command.HookMethodBefore;
 import com.sollyu.xposed.lua.command.HookStaticObjectField;
 import com.sollyu.xposed.lua.command.OutPutDebugString;
 import com.sollyu.xposed.lua.plugin.IO;
@@ -29,6 +30,9 @@ public class MainHook implements IXposedHookLoadPackage
     {
         MainHook.loadPackageParam = loadPackageParam;
         xSharedPreferences.makeWorldReadable();
+
+        LogUtils.OutputStringTAG = "=== XPOSED LUA ===";
+        mLuaState.openLibs();
 
         try
         {
@@ -68,6 +72,7 @@ public class MainHook implements IXposedHookLoadPackage
     {
         OutPutDebugString.Init( mLuaState );
         HookStaticObjectField.Init( mLuaState );
+        HookMethodBefore.Init( mLuaState );
         HookMethodAfter.Init( mLuaState );
     }
 
@@ -76,7 +81,7 @@ public class MainHook implements IXposedHookLoadPackage
         // 调用入口函数
         mLuaState.resume ( 0 );
         mLuaState.getGlobal("JavaEntry");
-        mLuaState.pushString(loadPackageParam.packageName);
+        mLuaState.pushJavaObject( loadPackageParam );
         mLuaState.pcall(1, 0, 0);
     }
 }

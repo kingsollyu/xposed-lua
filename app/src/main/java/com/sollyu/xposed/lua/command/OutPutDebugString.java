@@ -12,7 +12,7 @@ import org.keplerproject.luajava.LuaState;
  */
 public class OutPutDebugString extends JavaFunction
 {
-    public static OutPutDebugString self = null;
+    private static OutPutDebugString self = null;
 
     /**
      * Constructor that receives a LuaState.

@@ -1,7 +1,9 @@
 package com.sollyu.android4lua.plugin.ui;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.preference.PreferenceManager;
@@ -41,6 +43,7 @@ public class MainActivity extends Activity
         //noinspection SimplifiableIfStatement
         if ( id == R.id.action_settings )
         {
+            startActivity( new Intent( Intent.ACTION_VIEW, Uri.parse( "http://www.sollyu.com" ) ) );
             return true;
         }
 

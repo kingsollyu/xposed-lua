@@ -15,7 +15,7 @@ import de.robv.android.xposed.XposedHelpers;
  */
 public class HookStaticObjectField extends JavaFunction
 {
-    public static HookStaticObjectField self = null;
+    private static HookStaticObjectField self = null;
 
     public static void Init( LuaState mLuaState ) throws LuaException
     {

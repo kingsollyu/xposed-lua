@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">UI</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <string name="app_name">Xposed Lua Module</string>
+    <string name="hello_world">Xposed Lua Module\n
+        本模块的优点有如下：\n
+            1. 实时加载、实时调试Xposed的功能\n
+            2. Lua支持语言，拥有Lua的标准库功能\n
+            3. 良好的论坛(bbs.0xcode.org)
+            4. 几乎支持所有平台(arm,x86,arm-v7)
+    </string>
+    <string name="action_get_more_plugin">Get More Plugin</string>
 
 </resources>
